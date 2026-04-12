@@ -9,6 +9,8 @@ on:
   # Se ejecuta automáticamente cuando haces push a main
   push:
     branches:
+      - main
+      - develop
       - lab2-CI/CD
   pull_request:
     branches:
