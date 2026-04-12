@@ -10,6 +10,10 @@ on:
   push:
     branches:
       - lab2-CI/CD
+  pull_request:
+    branches:
+      - main
+      - develop
 
 jobs:
   # Definición del job de pruebas
