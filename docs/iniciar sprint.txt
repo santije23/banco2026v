@@ -1,0 +1,31 @@
+
+git clone https://github.com/santije23/banco2026v.git
+git remote add origin https://github.com/santije23/banco2026v.git
+git checkout -b feature/lab2-CI/CD
+git pull origin main develop --> traer los ultimos cambios
+git push -u origin feature/hu02-consulta-de-informacion-de-cliente  --> Subir la rama local a githun
+
+Pasos para actualizar desde rama develop a mi rama de consulta de clientes
+1. crear rama develop local --> git checkout develop
+2. traer ultimos cambios de develop remoto a mi rama local --> git pull origin develop
+3. regresar a la rama clientes --> git checkout feature/hu02-consulta-de-informacion-de-cliente
+4. marge o combinar la rama de clientes con lo que tiene rama develop git merge develop
+
+
+INICIO
+cp .env.example .env          # Configura tus variables
+cp docker-compose.override.yml.example docker-compose.override.yml 
+docker compose up -d db       # Levanta solo PostgreSQL 
+./mvnw spring-boot:run        # Corre la app en modo local
+
+./mvnw spring-boot:run "-Dspring-boot.run.profiles=local"
+
+ID cliente santiago: 67e14fdd-8055-402a-998f-b3ef67ae1560
+
+Logiarme en swagger ID
+{
+  "correo": "admin@banco.com",
+  "clave": "Test1234!"
+}
+
+Cambiar de RAMA -->  git switch feature/hu02-consulta-de-informacion-de-cliente
