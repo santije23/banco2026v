@@ -1,4 +1,5 @@
 # LABORATORIO DEL CURSO DE ARQUITECTURA DE SOFTWARE
+[![CI/CD Pipeline](https://github.com/santije23/banco2026v/actions/workflows/build.yml/badge.svg)](https://github.com/santije23/banco2026v/actions/workflows/build.yml)
 
 ## Para iniciar el proyecto
 1. Se requiere ingresar en la carpeta banco-frontend para poder iniciar los servicios en **REACT**
