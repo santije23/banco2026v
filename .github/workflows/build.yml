@@ -1,0 +1,41 @@
+# Nombre del workflow (aparece en GitHub Actions)
+name: CI/CD Pipeline
+
+# Eventos que activan el workflow
+on:
+  # Permite ejecutarlo manualmente desde GitHub
+  workflow_dispatch:
+
+  # Se ejecuta automáticamente cuando haces push a main
+  push:
+    branches:
+      - lab2-CI/CD
+
+jobs:
+  # Definición del job de pruebas
+  tests:
+    name: Unit tests
+
+    # Sistema operativo donde se ejecuta (máquina virtual)
+    runs-on: ubuntu-latest
+
+    steps:
+      # Descarga el código del repositorio al entorno de ejecución
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Configura Java 17 en la máquina virtual
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'   # Distribución recomendada de Java
+          java-version: '17'        # Versión de Java que usas
+
+          # Cache automático de dependencias Maven
+          # Evita descargar dependencias en cada ejecución → más rápido
+          cache: maven
+
+      # Ejecuta las pruebas del proyecto con Maven
+      - name: Run Tests
+        run: mvn -B test
+
