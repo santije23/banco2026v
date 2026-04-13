@@ -1,6 +1,4 @@
 FROM openjdk:17.0.1-jdk-slim
-WORKDIR /app
-# Copia el JAR de la etapa 'build' a la etapa actual
-COPY --from=build /app/target/banco2026v.jar banco2026v.jar
 EXPOSE 8080
+ADD target/banco2026v.jar banco2026v.jar
 ENTRYPOINT ["java","-jar","banco2026v.jar"]
