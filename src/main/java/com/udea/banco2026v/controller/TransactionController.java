@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value="/api/transactions", produces = "application/json")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000","https://banco2026v.vercel.app/"})
 public class TransactionController {
 
     @Autowired
